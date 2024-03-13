@@ -1,5 +1,5 @@
 import React, {useState, useCallback} from 'react';
-
+import './App.css'; 
 import Playlist from '../playlist/playlist';
 import SearchBar from '../search_bar/searchBar';
 import SearchResults from '../search_result/search_result';
@@ -51,11 +51,11 @@ const App = () => {
 
 
   return (
-    <div>
+    <div className='Header'>
       <h1>Jamming</h1>
-      <div>
+      <div className='App'>
        <SearchBar onSearch={search} />
-       <div>
+       <div className='App-playlist'>
         <SearchResults searchResults={searchResults} onAdd={addTrack} />
         <Playlist 
           playlistName={playlistName}
@@ -71,6 +71,8 @@ const App = () => {
 };
 
 export default App;
+      
+      
 
 
 

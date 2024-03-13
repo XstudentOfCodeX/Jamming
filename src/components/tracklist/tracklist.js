@@ -5,8 +5,11 @@ import './tracklist.css';
 import Track from '../track/track';
 
 const TrackList = (props) => {
+    if (!props.tracks) {
+        return null; 
+    }
     return (
-        <div>
+        <div className='Tracklist'>
             {props.tracks.map((track) => {
                 return (
                     <Track 
