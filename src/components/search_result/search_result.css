@@ -2,19 +2,24 @@
     width: 50%;
     height: 950px;
     overflow-y: scroll;
-    padding: .88rem;
+    padding-top: 1rem;
     background-color: #32CD32;
     box-shadow: 1px 1px 2px 3px #fbff00;
     
   }
 
   h2{
-    color: rgb(10, 10, 10);
+    display: flex;
+    align-self: self-start;
+    color:black;
+    font-weight: bold;
+    font-size: larger;
+    padding-left: 1rem;
   }
   
   ::-webkit-scrollbar {
       width: 0px;
-      background: transparent;
+      
   }
   
   @media only screen and (max-width: 1020px) {

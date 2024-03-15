@@ -79,13 +79,20 @@ const Spotify = {
 //Saves a playlist by creating a new one or updating a already created one.
 
   async savePlaylist(name, URIs, id) {
-    if (!name || !URIs.length) return;
+    if (!name || !URIs.length) {
+      console.log('invalid name or URI'); 
+      return;
+    }
+
 
     const accessToken = Spotify.getAccessToken();
     const headers = { Authorization: `Bearer ${accessToken}` };
     const currentUser = await Spotify.getCurrentUserId();
 
+
+
     if (id) {
+      
       try {
         const url = `https://api.spotify.com/v1/playlists/${id}`;
         const response = await fetch(url, {
@@ -94,6 +101,7 @@ const Spotify = {
           body: JSON.stringify({ name: name }),
         });
         if (response.ok) {
+
           try {
             const url = `https://api.spotify.com/v1/playlists/${id}/tracks`;
             const response = await fetch(url, {
@@ -114,12 +122,14 @@ const Spotify = {
       }
     } else {
       const url = `https://api.spotify.com/v1/users/${currentUser}/playlists`;
+
       try {
         const response = await fetch(url, {
           headers: headers,
           method: "POST",
           body: JSON.stringify({ name: name }),
         });
+
         if (response.ok) {
           const jsonResponse = await response.json();
           const playlistID = jsonResponse.id;
@@ -144,6 +154,11 @@ const Spotify = {
       }
     }
   },
+
+
+
+
+
 
 // Retrieves the playlists belonging to the current user.
   async getUserPlaylists() {

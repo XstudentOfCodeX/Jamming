@@ -1,20 +1,16 @@
-import React, {useCallback} from "react";
+import React from "react";
 
-
+import './track.css';
 
 
 const Track = (props) => {
-    const addTrack = useCallback(
-        (event) => {
+    const addTrack = (event) => {
             props.onAdd(props.track);
-        }, [props.onAdd, props.track]
-    );
+        };
 
-    const removeTrack = useCallback(
-        (event) => {
+    const removeTrack = (event) => {
             props.onRemove(props.track);
-        }, [props.onRemove, props.track]
-    );
+        };
 
     const addOrRemoveTrack = () => {
         return (
@@ -30,7 +26,7 @@ const Track = (props) => {
     return(
         <div className="Track">
          <div className="TrackInfo">
-         <h4>{props.track.name}</h4>
+         <h5>{props.track.name}</h5>
          <p>
             {props.track.artist} | {props.track.album}
          </p>

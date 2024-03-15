@@ -5,12 +5,19 @@
     overflow-y: scroll;
     width: 37%;
     max-height: 950px;
-    padding: 2.27rem 1.16rem;
+    padding: 1rem 1rem;
     background-color: #32CD32;
     box-shadow: 1px 1px 2px 3px #fbff00;
   }
 
-
+.Playlist h2{
+  display: flex;
+  align-self: self-start;
+  color:black;
+  font-weight: bold;
+  font-size: larger;
+  
+}
   .Playlist input {
     width: 100%;
     border: 0;
@@ -29,16 +36,17 @@
     border-radius: 54px;
     border-width: 0px;
     margin-top: 1.27rem;
-    background-color: #000000;
+    background-color: rgb(27, 26, 26);
     text-align: center;
     font-size: .83rem;
     transition: background-color .25s;
-    color: #dddddd;
+    color: #32CD32;
     font-weight: 500;
+    box-shadow: .2px .2px .2px 1px #fbff00;
   }
   
   .Playlist-save:hover {
-    background-color: rgba(73, 73, 73, 0.7);
+    background-color: rgb(101, 252, 101);
     
   }
   

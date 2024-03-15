@@ -3,19 +3,21 @@ import './playlist.css';
 import TrackList from '../tracklist/tracklist';
 
 
-const Playlist = ({ onNameChange, playlistTracks, onRemove, onSave,}) => {
+const Playlist = ({ onNameChange, playlistTracks, onRemove, onSave}) => {
     const handleNameChange = useCallback(
         (event) => {
             if(typeof onNameChange === 'function') {
             onNameChange(event.target.value);
             }
-        }, [onNameChange]
+        },[onNameChange]
     );
 
 
     return (
         <div className='Playlist'>
-            <input  onChange={handleNameChange} defaultValue={"Enter Playlist Name"} />
+            <h2>Enter Playlist Name</h2>
+            <br></br>
+            <input  onChange={handleNameChange}  />
             <TrackList 
             tracks={playlistTracks}
             isRemoval={true}
